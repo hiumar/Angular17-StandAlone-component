@@ -1,0 +1,32 @@
+<div class="top-menu">
+
+  <img class="logo"
+       src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div>
+
+<div>
+
+  @defer{
+  <div class="courses">
+
+    <course-card *ngFor="let course of courses | filterByCategory: 'BEGINNER'"
+    (courseChanged)="save($event)"
+                 [course]="course" >
+
+      <course-image [src]="course.iconUrl"></course-image>
+
+    </course-card>
+
+  </div>
+  } @placeholder  {
+    <h2>This is place holder</h2>
+  }@loading (minimum 3s; after 1s){
+    <h2>loader takes time</h2>
+  }
+
+</div>
+
+
+
+
